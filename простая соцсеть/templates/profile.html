@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+    <h2>Welcome, {{ username }}!</h2>
+    <h3>Your Posts:</h3>
+    <ul>
+        {% for post in posts %}
+            <li><a href="{{ url_for('post_detail', post_id=post.id) }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('new_post') }}">Create New Post</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
